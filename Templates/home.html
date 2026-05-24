@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<h2>Welcome {{ name|upper }}</h2>
+
+<p>Course: {{ course }}</p>
+
+<p>Date: {{ today|date:"d M Y" }}</p>
+
+<ul>
+    {% for num in numbers %}
+        <li>{{ num }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

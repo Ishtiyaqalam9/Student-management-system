@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block content %}
+
+<h2>About Page</h2>
+<p>{{ description }}</p>
+
+<ul>
+    {% for skill in skills %}
+        <li>{{ skill }}</li>
+    {% endfor %}
+</ul>
+
+{% if skills %}
+    <p>Skills Available</p>
+{% endif %}
+
+{% endblock %}
