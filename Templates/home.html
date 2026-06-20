@@ -18,4 +18,27 @@ Home
     {% endfor %}
 </ul>
 
+<hr>
+
+<h3>Add Task</h3>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="task" placeholder="Enter task">
+    <button type="submit">Add</button>
+</form>
+
+<h3>Task List</h3>
+
+<ul>
+    {% for task in tasks %}
+        <li>
+            {{ task.title }}
+            <a href="{% url 'delete_task' task.id %}">Delete</a>
+        </li>
+    {% empty %}
+        <li>No tasks available</li>
+    {% endfor %}
+</ul>
+
 {% endblock %}
